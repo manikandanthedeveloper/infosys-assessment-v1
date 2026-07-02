@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-const iconSort = "/assets/icon-sort.svg";
-const iconSortUp = "/assets/icon-sort.svg";
-const iconSortDown = "/assets/icon-sort.svg";
+const iconSort = `${process.env.PUBLIC_URL}/assets/icon-sort.svg`;
+const iconSortUp = `${process.env.PUBLIC_URL}/assets/icon-sort-up.svg`;
+const iconSortDown = `${process.env.PUBLIC_URL}/assets/icon-sort-down.svg`;
 
 function SortIcon({ sortConfig, orderBy, fieldName }) {
 	return (

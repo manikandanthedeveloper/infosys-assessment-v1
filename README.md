@@ -199,7 +199,7 @@ npm install
 Start development server.
 
 ```bash
-npm run dev
+npm start
 ```
 
 Run tests.
