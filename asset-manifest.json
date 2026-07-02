@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/infosys-assessment-v1/static/css/main.cd0cb713.css",
-    "main.js": "/infosys-assessment-v1/static/js/main.79ab8650.js",
+    "main.js": "/infosys-assessment-v1/static/js/main.0b6a3e13.js",
     "index.html": "/infosys-assessment-v1/index.html",
     "main.cd0cb713.css.map": "/infosys-assessment-v1/static/css/main.cd0cb713.css.map",
-    "main.79ab8650.js.map": "/infosys-assessment-v1/static/js/main.79ab8650.js.map"
+    "main.0b6a3e13.js.map": "/infosys-assessment-v1/static/js/main.0b6a3e13.js.map"
   },
   "entrypoints": [
     "static/css/main.cd0cb713.css",
-    "static/js/main.79ab8650.js"
+    "static/js/main.0b6a3e13.js"
   ]
 }
