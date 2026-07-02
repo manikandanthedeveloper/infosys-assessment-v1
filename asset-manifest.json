@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/infosys-assignment/static/css/main.cd0cb713.css",
-    "main.js": "/infosys-assignment/static/js/main.79ab8650.js",
-    "index.html": "/infosys-assignment/index.html",
-    "main.cd0cb713.css.map": "/infosys-assignment/static/css/main.cd0cb713.css.map",
-    "main.79ab8650.js.map": "/infosys-assignment/static/js/main.79ab8650.js.map"
+    "main.css": "/infosys-assignment-v1/static/css/main.cd0cb713.css",
+    "main.js": "/infosys-assignment-v1/static/js/main.79ab8650.js",
+    "index.html": "/infosys-assignment-v1/index.html",
+    "main.cd0cb713.css.map": "/infosys-assignment-v1/static/css/main.cd0cb713.css.map",
+    "main.79ab8650.js.map": "/infosys-assignment-v1/static/js/main.79ab8650.js.map"
   },
   "entrypoints": [
     "static/css/main.cd0cb713.css",
