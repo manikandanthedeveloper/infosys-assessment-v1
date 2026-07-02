@@ -1,0 +1,93 @@
+import PropTypes from "prop-types";
+import useSort from "../../hooks/useSort";
+import SortIcon from "../common/SortIcon";
+import TransactionTableRow from "./TransactionTableRow";
+
+function TransactionTable({ rewardTransactions }) {
+	const { sortedData, handleSort, sortConfig } = useSort(
+		rewardTransactions,
+		"",
+	);
+
+	return (
+		<div className="bg-white rounded-none border border-gray-200">
+			<div className="border-b border-b-gray-200 p-5">
+				<h2 className="text-xl font-bold">Transactions</h2>
+			</div>
+
+			<div className="overflow-x-auto">
+				<table className="min-w-full">
+					<thead className="bg-gray-50">
+						<tr>
+							<th className="px-6 py-3 text-left">
+								Transaction ID
+							</th>
+
+							<th
+								className="px-6 py-3 text-left cursor-pointer"
+								onClick={() => handleSort("firstName")}
+							>
+								<SortIcon
+									sortConfig={sortConfig}
+									orderBy="firstName"
+									fieldName="Customer Name"
+								/>
+							</th>
+							<th
+								className="px-6 py-3 text-left cursor-pointer"
+								onClick={() => handleSort("purchaseDate")}
+							>
+								<SortIcon
+									sortConfig={sortConfig}
+									orderBy="purchaseDate"
+									fieldName="Purchase Date"
+								/>
+							</th>
+							<th className="px-6 py-3 text-left">Product</th>
+							<th
+								className="px-6 py-3 text-left cursor-pointer"
+								onClick={() => handleSort("amount")}
+							>
+								<SortIcon
+									sortConfig={sortConfig}
+									orderBy="amount"
+									fieldName="Price"
+								/>
+							</th>
+							<th
+								className="px-6 py-3 text-left cursor-pointer"
+								onClick={() => handleSort("rewardPoints")}
+							>
+								<SortIcon
+									sortConfig={sortConfig}
+									orderBy="rewardPoints"
+									fieldName="Reward"
+								/>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						{sortedData.map((item) => (
+							<TransactionTableRow item={item} key={item.id} />
+						))}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	);
+}
+
+TransactionTable.prototype = {
+	rewardTransactions: PropTypes.arrayOf(
+		PropTypes.exact({
+			id: PropTypes.string.isRequired,
+			customerId: PropTypes.string.isRequired,
+			customerName: PropTypes.string.isRequired,
+			amount: PropTypes.number.isRequired,
+			product: PropTypes.string.isRequired,
+			purchaseDate: PropTypes.string.isRequired,
+		}).isRequired,
+	).isRequired,
+};
+
+export default TransactionTable;
