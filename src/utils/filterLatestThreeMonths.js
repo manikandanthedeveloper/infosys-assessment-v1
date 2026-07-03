@@ -11,7 +11,7 @@ function filterLatestThreeMonths(transactions) {
 				})
 				.sort(),
 		),
-	].slice(-4);
+	].slice(-3);
 
 	return transactions.filter((transaction) => {
 		const date = new Date(transaction.purchaseDate);
