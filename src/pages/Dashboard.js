@@ -10,13 +10,13 @@ import Widgets from "../components/widgets/Widgets";
 import { useTransactions } from "../hooks/useTransactions";
 import rewardAggregator from "../utils/rewardAggregator";
 import DataSection from "../components/common/DataSection";
-import filterLatestThreeMonths from "../utils/filterLatestThreeMonths";
+import filterLatestMonths from "../utils/filterLatestMonths";
 import HeaderSkeleton from "../components/common/HeaderSkeleton";
 
 function Dashboard() {
 	const { transactions, loading, error, refetch } = useTransactions();
 	const filteredTransactions = useMemo(
-		() => filterLatestThreeMonths(transactions),
+		() => filterLatestMonths(transactions, 3),
 		[transactions],
 	);
 	const { stats, monthlyRewards, totalRewards, rewardTransactions } = useMemo(
