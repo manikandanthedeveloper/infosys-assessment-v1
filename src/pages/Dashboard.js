@@ -11,6 +11,7 @@ import { useTransactions } from "../hooks/useTransactions";
 import rewardAggregator from "../utils/rewardAggregator";
 import DataSection from "../components/common/DataSection";
 import filterLatestThreeMonths from "../utils/filterLatestThreeMonths";
+import HeaderSkeleton from "../components/common/HeaderSkeleton";
 
 function Dashboard() {
 	const { transactions, loading, error, refetch } = useTransactions();
@@ -22,6 +23,7 @@ function Dashboard() {
 		() => rewardAggregator(filteredTransactions),
 		[filteredTransactions],
 	);
+	const widgetsState = stats.transactions ? [stats] : [];
 
 	if (error) {
 		return (
@@ -35,10 +37,14 @@ function Dashboard() {
 
 	return (
 		<div className="max-w-7xl mx-auto p-8">
-			<Header />
+			{loading ? (
+				<HeaderSkeleton />
+			) : (
+				<Header monthCount={stats.months} />
+			)}
 			<DataSection
 				loading={loading}
-				data={stats.transactions ? [stats] : []}
+				data={widgetsState}
 				skeleton={<WidgetsSkeleton />}
 				emptyMessage="There is no widget data available to display."
 			>
