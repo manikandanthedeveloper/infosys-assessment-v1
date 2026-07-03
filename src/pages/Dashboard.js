@@ -16,7 +16,7 @@ import HeaderSkeleton from "../components/common/HeaderSkeleton";
 function Dashboard() {
 	const { transactions, loading, error, refetch } = useTransactions();
 	const filteredTransactions = useMemo(
-		() => filterLatestMonths(transactions, 3),
+		() => filterLatestMonths(transactions),
 		[transactions],
 	);
 	const { stats, monthlyRewards, totalRewards, rewardTransactions } = useMemo(

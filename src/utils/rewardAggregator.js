@@ -5,11 +5,10 @@ import { sortByDate, sortByMonthYear, sortByName } from "./sortData";
 function rewardAggregator(transactions) {
 	const result = transactions.reduce(
 		(acc, transaction) => {
-			const rewardPoints = rewardCalculator(transaction.amount);
-
-			const { month, year, MmYyyy } = dateFormatter(
-				transaction.purchaseDate,
-			);
+			const { customerId, firstName, lastName, amount, purchaseDate } =
+				transaction;
+			const rewardPoints = rewardCalculator(amount);
+			const { month, year, MmYyyy } = dateFormatter(purchaseDate);
 
 			// Transactions Table
 			acc.transactions.push({
@@ -18,13 +17,13 @@ function rewardAggregator(transactions) {
 			});
 
 			// Monthly Rewards
-			const monthlyKey = `${transaction.customerId}-${MmYyyy}`;
+			const monthlyKey = `${customerId}-${MmYyyy}`;
 			if (!acc.monthlyRewards[monthlyKey]) {
 				acc.monthlyRewards[monthlyKey] = {
 					id: monthlyKey,
-					customerId: transaction.customerId,
-					firstName: transaction.firstName,
-					lastName: transaction.lastName,
+					customerId: customerId,
+					firstName: firstName,
+					lastName: lastName,
 					month: month.name,
 					monthNumber: month.number,
 					year,
@@ -34,18 +33,18 @@ function rewardAggregator(transactions) {
 			acc.monthlyRewards[monthlyKey].rewardPoints += rewardPoints;
 
 			// Total Rewards
-			const totalKey = transaction.customerId;
+			const totalKey = customerId;
 
 			if (!acc.totalRewards[totalKey]) {
 				acc.totalRewards[totalKey] = {
-					customerId: transaction.customerId,
-					firstName: transaction.firstName,
-					lastName: transaction.lastName,
+					customerId: customerId,
+					firstName: firstName,
+					lastName: lastName,
 					rewardPoints: 0,
 				};
 			}
 			acc.totalRewards[totalKey].rewardPoints += rewardPoints;
-			acc.customerIds.add(transaction.customerId);
+			acc.customerIds.add(customerId);
 			acc.totalRewardPoints += rewardPoints;
 			acc.months.add(`${year}-${month.number}`);
 			return acc;

@@ -20,14 +20,17 @@ function TransactionTableRow({ item }) {
 	);
 }
 
-TransactionTableRow.propTypes = PropTypes.exact({
-	id: PropTypes.string.isRequired,
-	customerId: PropTypes.string.isRequired,
-	firstName: PropTypes.string.isRequired,
-	lastName: PropTypes.string.isRequired,
-	amount: PropTypes.number.isRequired,
-	product: PropTypes.string.isRequired,
-	purchaseDate: PropTypes.string.isRequired,
-}).isRequired;
+TransactionTableRow.propTypes = {
+	item: PropTypes.exact({
+		id: PropTypes.string.isRequired,
+		customerId: PropTypes.string.isRequired,
+		firstName: PropTypes.string.isRequired,
+		lastName: PropTypes.string.isRequired,
+		amount: PropTypes.number.isRequired,
+		product: PropTypes.string.isRequired,
+		purchaseDate: PropTypes.string.isRequired,
+		rewardPoints: PropTypes.number.isRequired,
+	}).isRequired,
+};
 
 export default TransactionTableRow;

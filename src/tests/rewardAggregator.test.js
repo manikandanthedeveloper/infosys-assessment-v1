@@ -115,6 +115,5 @@ test("handles decimal amounts correctly", () => {
 	];
 
 	const result = rewardAggregator(data);
-
-	expect(result.rewardTransactions[0].rewardPoints).toBe(50);
+	expect(result.rewardTransactions[0].rewardPoints).toBe(52);
 });

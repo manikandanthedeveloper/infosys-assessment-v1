@@ -1,19 +1,15 @@
-function rewardCalculator(amount) {
-	if (typeof amount !== "number" || Number.isNaN(amount)) {
+export default function rewardCalculator(amount) {
+	if (!Number.isFinite(amount)) {
 		return 0;
 	}
 
-	const purchaseAmount = Math.floor(amount);
+	let reward = 0;
 
-	if (purchaseAmount <= 50) {
-		return 0;
+	if (amount > 100) {
+		reward = 50 + (amount - 100) * 2;
+	} else if (amount > 50) {
+		reward = amount - 50;
 	}
 
-  if (purchaseAmount <= 100) {
-		return purchaseAmount - 50;
-  }
-
-  return 50 + (purchaseAmount - 100) * 2;
+	return Math.round(reward);
 }
-
-export default rewardCalculator;

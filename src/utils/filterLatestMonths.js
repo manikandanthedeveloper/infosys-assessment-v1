@@ -1,4 +1,4 @@
-function filterLatestMonths(transactions, monthCount) {
+function filterLatestMonths(transactions) {
 	const latestMonths = [
 		...new Set(
 			transactions
@@ -11,7 +11,7 @@ function filterLatestMonths(transactions, monthCount) {
 				})
 				.sort(),
 		),
-	].slice(-monthCount);
+	].slice(-3);
 
 	return transactions.filter((transaction) => {
 		const date = new Date(transaction.purchaseDate);
