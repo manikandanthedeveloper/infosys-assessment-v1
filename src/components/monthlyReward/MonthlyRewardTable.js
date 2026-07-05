@@ -13,8 +13,15 @@ function MonthlyRewardTable({ monthlyReward }) {
 			<table className="min-w-full">
 				<thead className="bg-gray-50">
 					<tr>
-						<th className="px-6 py-3 text-left">
-							<span>Customer Id</span>
+						<th
+							className="px-6 py-3 text-left cursor-pointer"
+							onClick={() => handleSort("customerId")}
+						>
+							<SortIcon
+								sortConfig={sortConfig}
+								orderBy="customerId"
+								fieldName="Customer Id"
+							/>
 						</th>
 						<th
 							className="px-6 py-3 text-left cursor-pointer"
@@ -23,7 +30,17 @@ function MonthlyRewardTable({ monthlyReward }) {
 							<SortIcon
 								sortConfig={sortConfig}
 								orderBy="firstName"
-								fieldName="Customer Name"
+								fieldName="First Name"
+							/>
+						</th>
+						<th
+							className="px-6 py-3 text-left cursor-pointer"
+							onClick={() => handleSort("lastName")}
+						>
+							<SortIcon
+								sortConfig={sortConfig}
+								orderBy="lastName"
+								fieldName="Last Name"
 							/>
 						</th>
 						<th

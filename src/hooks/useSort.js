@@ -1,8 +1,15 @@
 import { useMemo, useState } from "react";
 
 const comparators = {
-	customerId: (a, b) => a.customerId - b.customerId,
-	customerName: (a, b) => a.customerName.localeCompare(b.customerName),
+	customerId: (a, b) =>
+		String(a.customerId).localeCompare(String(b.customerId)),
+	firstName: (a, b) => a.firstName.localeCompare(b.firstName),
+	lastName: (a, b) => a.lastName.localeCompare(b.lastName),
+	customerName: (a, b) =>
+		`${a.firstName} ${a.lastName}`.localeCompare(
+			`${b.firstName} ${b.lastName}`,
+		),
+	transactionId: (a, b) => String(a.id).localeCompare(String(b.id)),
 	rewardPoints: (a, b) => a.rewardPoints - b.rewardPoints,
 	amount: (a, b) => a.amount - b.amount,
 	purchaseDate: (a, b) => new Date(a.purchaseDate) - new Date(b.purchaseDate),

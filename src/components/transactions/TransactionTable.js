@@ -21,10 +21,16 @@ function TransactionTable({ rewardTransactions }) {
 				<table className="min-w-full">
 					<thead className="bg-gray-50">
 						<tr>
-							<th className="px-6 py-3 text-left">
-								Transaction ID
+							<th
+								className="px-6 py-3 text-left cursor-pointer"
+								onClick={() => handleSort("transactionId")}
+							>
+								<SortIcon
+									sortConfig={sortConfig}
+									orderBy="transactionId"
+									fieldName="Transaction Id"
+								/>
 							</th>
-
 							<th
 								className="px-6 py-3 text-left cursor-pointer"
 								onClick={() => handleSort("firstName")}
@@ -32,7 +38,17 @@ function TransactionTable({ rewardTransactions }) {
 								<SortIcon
 									sortConfig={sortConfig}
 									orderBy="firstName"
-									fieldName="Customer Name"
+									fieldName="First Name"
+								/>
+							</th>
+							<th
+								className="px-6 py-3 text-left cursor-pointer"
+								onClick={() => handleSort("lastName")}
+							>
+								<SortIcon
+									sortConfig={sortConfig}
+									orderBy="lastName"
+									fieldName="Last Name"
 								/>
 							</th>
 							<th

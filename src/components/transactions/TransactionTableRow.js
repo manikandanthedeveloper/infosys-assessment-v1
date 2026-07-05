@@ -5,9 +5,8 @@ function TransactionTableRow({ item }) {
 	return (
 		<tr className="border-b border-b-gray-200">
 			<td className="px-6 py-4">{item.id}</td>
-			<td className="px-6 py-4">
-				{item.firstName} {item.lastName}
-			</td>
+			<td className="px-6 py-4">{item.firstName}</td>
+			<td className="px-6 py-4">{item.lastName}</td>
 			<td className="px-6 py-4">{item.purchaseDate}</td>
 			<td className="px-6 py-4">{item.product}</td>
 			<td className="px-6 py-4 text-right">
