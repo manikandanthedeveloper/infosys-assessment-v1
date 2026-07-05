@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import TableSkeleton from "../components/common/TableSkeleton";
 import WidgetsSkeleton from "../components/widgets/WidgetsSkeleton";
-import Error from "../components/common/Error";
+import ErrorState from "../components/common/ErrorState";
 import Header from "../components/common/Header";
 import MonthlyRewardTable from "../components/monthlyReward/MonthlyRewardTable";
 import TotalRewardTable from "../components/totalRewards/TotalRewardTable";
@@ -34,7 +34,7 @@ function Dashboard() {
 	});
 	if (error) {
 		return (
-			<Error
+			<ErrorState
 				title="Unable to load transactions"
 				description={error.message}
 				onRetry={refetch}
@@ -68,7 +68,7 @@ function Dashboard() {
 				skeleton={<TableSkeleton />}
 				emptyMessage="There is no Monthly Rewards data available to display."
 			>
-				<MonthlyRewardTable monthlyReward={monthlyRewards} />
+				<MonthlyRewardTable monthlyRewards={monthlyRewards} />
 			</DataSection>
 			<DataSection
 				loading={loading}

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function Error({
+function ErrorState({
 	title = "Something went wrong",
 	description = "We couldn't load the requested data. Please try again.",
 	onRetry,
@@ -32,4 +32,4 @@ Error.propTypes = {
 	onRetry: PropTypes.func,
 };
 
-export default Error;
+export default ErrorState;
