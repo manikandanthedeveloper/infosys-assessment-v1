@@ -1,12 +1,16 @@
+const formatter = new Intl.NumberFormat("en-US", {
+	style: "currency",
+	currency: "USD",
+});
+
 const priceFormatter = (value) => {
-	if (typeof value !== "number") {
-		throw new Error("Input value must be a number");
+	const amount = Number(value);
+
+	if (!Number.isFinite(amount)) {
+		return "-";
 	}
 
-	return new Intl.NumberFormat("en-US", {
-		style: "currency",
-		currency: "USD",
-	}).format(value);
+	return formatter.format(amount);
 };
 
 export default priceFormatter;
