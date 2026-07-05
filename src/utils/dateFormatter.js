@@ -1,30 +1,40 @@
+const dateFormatterIntl = new Intl.DateTimeFormat("en-US", {
+	day: "2-digit",
+	month: "2-digit",
+	year: "numeric",
+});
+const monthLongFormatter = new Intl.DateTimeFormat("en-US", {
+	month: "long",
+});
+const monthShortFormatter = new Intl.DateTimeFormat("en-US", {
+	month: "short",
+});
+function pad(value) {
+	return String(value).padStart(2, "0");
+}
+
 function dateFormatter(dateString) {
 	const date = new Date(dateString);
-	const formatter = new Intl.DateTimeFormat("en-US", {
-		day: "2-digit",
-		month: "2-digit",
-		year: "numeric",
-	});
-	const formattedDate = formatter.format(date);
 	const day = date.getDate();
 	const monthNumber = date.getMonth() + 1;
 	const year = date.getFullYear();
+	const paddedDay = pad(day);
+	const paddedMonth = pad(monthNumber);
 
 	return {
 		day,
 		month: {
 			number: monthNumber,
-			name: date.toLocaleString("en-US", { month: "long" }),
-			short: date.toLocaleString("en-US", { month: "short" }),
+			name: monthLongFormatter.format(date),
+			short: monthShortFormatter.format(date),
 		},
 		year,
-		formattedDate,
-		yyyyMmDd: `${year}-${String(monthNumber).padStart(2, "0")}-${String(day).padStart(2, "0")}`,
-		ddMmYyyy: `${String(day).padStart(2, "0")}-${String(monthNumber).padStart(2, "0")}-${year}`,
-		mmDdYyyy: `${String(monthNumber).padStart(2, "0")}-${String(day).padStart(2, "0")}-${year}`,
-		yyMmDd: `${String(year).slice(-2)}-${String(monthNumber).padStart(2, "0")}-${String(day).padStart(2, "0")}`,
-		MmYyyy: `${String(monthNumber).padStart(2, "0")}-${year}`,
-		yyyyMm: `${year}-${String(monthNumber).padStart(2, "0")}`,
+		yyyyMmDd: `${year}-${paddedMonth}-${paddedDay}`,
+		ddMmYyyy: `${paddedDay}-${paddedMonth}-${year}`,
+		mmDdYyyy: `${paddedMonth}-${paddedDay}-${year}`,
+		yyMmDd: `${String(year).slice(-2)}-${paddedMonth}-${paddedDay}`,
+		MmYyyy: `${paddedMonth}-${year}`,
+		yyyyMm: `${year}-${paddedMonth}`,
 	};
 }
 
