@@ -45,12 +45,12 @@ function MonthlyRewardTable({ monthlyRewards }) {
 						</th>
 						<th
 							className="px-6 py-3 text-left cursor-pointer"
-							onClick={() => handleSort("monthNumber")}
+							onClick={() => handleSort("month")}
 						>
 							<div className="flex flex-row items-center justify-items-start gap-4">
 								<SortIcon
 									sortConfig={sortConfig}
-									orderBy="monthNumber"
+									orderBy="month"
 									fieldName="Month"
 								/>
 							</div>

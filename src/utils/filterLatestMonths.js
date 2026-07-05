@@ -5,9 +5,7 @@ function filterLatestMonths(transactions) {
 		...new Set(
 			transactions
 				.map((transaction) => {
-					const { yyyyMm } = dateFormatter(
-						new Date(transaction.purchaseDate),
-					);
+					const { yyyyMm } = dateFormatter(transaction.purchaseDate);
 
 					return yyyyMm;
 				})
@@ -16,7 +14,7 @@ function filterLatestMonths(transactions) {
 	].slice(MONTHS_TO_INCLUDE * -1);
 
 	return transactions.filter((transaction) => {
-		const { yyyyMm } = dateFormatter(new Date(transaction.purchaseDate));
+		const { yyyyMm } = dateFormatter(transaction.purchaseDate);
 
 		return latestMonths.includes(yyyyMm);
 	});
