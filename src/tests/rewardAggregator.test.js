@@ -44,15 +44,17 @@ describe("rewardAggregator", () => {
 		const result = rewardAggregator(transactions);
 
 		const john = result.totalRewards.find(
-			(reward) => reward.firstName === "John",
+			(reward) => reward.customerId === 1,
 		);
 
+		expect(john).toBeDefined();
 		expect(john.rewardPoints).toBe(120);
 
 		const emma = result.totalRewards.find(
-			(reward) => reward.firstName === "Emma",
+			(reward) => reward.customerId === 2,
 		);
 
+		expect(emma).toBeDefined();
 		expect(emma.rewardPoints).toBe(150);
 	});
 
@@ -95,6 +97,7 @@ describe("rewardAggregator", () => {
 
 		const result = rewardAggregator(data);
 
+		expect(result.monthlyRewards).toHaveLength(3);
 		expect(result.monthlyRewards[0].year).toBe(2023);
 		expect(result.monthlyRewards[0].monthNumber).toBe(12);
 
@@ -118,9 +121,7 @@ describe("rewardAggregator", () => {
 
 		const result = rewardAggregator(data);
 		expect(result.rewardTransactions[0].rewardPoints).toBe(50);
+		expect(result.totalRewards[0].rewardPoints).toBe(50);
+		expect(result.stats.rewardsAwarded).toBe(50);
 	});
 });
-
-
-
-
