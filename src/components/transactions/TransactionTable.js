@@ -2,14 +2,12 @@ import PropTypes from "prop-types";
 import useSort from "../../hooks/useSort";
 import SortIcon from "../common/SortIcon";
 import TransactionTableRow from "./TransactionTableRow";
-import logger from "../../utils/logger";
 
 function TransactionTable({ rewardTransactions }) {
 	const { sortedData, handleSort, sortConfig } = useSort(
 		rewardTransactions,
 		"",
 	);
-	logger.info("TransactionTable sortedData:", sortedData);
 
 	return (
 		<div className="bg-white rounded-none border border-gray-200">
