@@ -5,10 +5,6 @@ const comparators = {
 		String(a.customerId).localeCompare(String(b.customerId)),
 	firstName: (a, b) => a.firstName.localeCompare(b.firstName),
 	lastName: (a, b) => a.lastName.localeCompare(b.lastName),
-	customerName: (a, b) =>
-		`${a.firstName} ${a.lastName}`.localeCompare(
-			`${b.firstName} ${b.lastName}`,
-		),
 	transactionId: (a, b) => String(a.id).localeCompare(String(b.id)),
 	rewardPoints: (a, b) => a.rewardPoints - b.rewardPoints,
 	amount: (a, b) => a.amount - b.amount,
@@ -34,13 +30,11 @@ function useSort(data, initialKey, initialDirection = "asc") {
 			return [...data];
 		}
 		const sorted = [...data];
-		const comparator =
-			comparators[sortConfig.key] ??
-			((a, b) => {
-				if (a[sortConfig.key] < b[sortConfig.key]) return -1;
-				if (a[sortConfig.key] > b[sortConfig.key]) return 1;
-				return 0;
-			});
+		const comparator = comparators[sortConfig.key];
+
+		if (!comparator) {
+			return [...data];
+		}
 
 		sorted.sort(comparator);
 		if (sortConfig.direction === "desc") {
