@@ -1,6 +1,7 @@
 import rewardCalculator from "./rewardCalculator";
 import dateFormatter from "./dateFormatter";
 import { sortByDate, sortByMonthYear, sortByName } from "./sortData";
+import logger from "./logger";
 
 function rewardAggregator(transactions) {
 	const result = transactions.reduce(
@@ -46,7 +47,7 @@ function rewardAggregator(transactions) {
 			acc.totalRewards[totalKey].rewardPoints += rewardPoints;
 			acc.customerIds.add(customerId);
 			acc.totalRewardPoints += rewardPoints;
-			acc.months.add(`${year}-${month.number}`);
+			acc.months.add(MmYyyy);
 			return acc;
 		},
 		{
