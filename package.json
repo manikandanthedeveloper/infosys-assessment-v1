@@ -2,6 +2,7 @@
   "name": "infosys-assignment",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://manikandanthedeveloper.github.io/infosys-assessment-v1",
   "dependencies": {
     "@tailwindcss/cli": "^4.3.2",
     "@testing-library/dom": "^10.4.1",
