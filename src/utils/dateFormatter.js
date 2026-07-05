@@ -24,6 +24,7 @@ function dateFormatter(dateString) {
 		mmDdYyyy: `${String(monthNumber).padStart(2, "0")}-${String(day).padStart(2, "0")}-${year}`,
 		yyMmDd: `${String(year).slice(-2)}-${String(monthNumber).padStart(2, "0")}-${String(day).padStart(2, "0")}`,
 		MmYyyy: `${String(monthNumber).padStart(2, "0")}-${year}`,
+		yyyyMm: `${year}-${String(monthNumber).padStart(2, "0")}`,
 	};
 }
 

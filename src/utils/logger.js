@@ -1,5 +1,4 @@
-const LOG_LEVEL = "INFO";
-const ENABLE_LOG = process.env.NODE_ENV !== "production";
+import { ENABLE_LOG, LOG_LEVEL } from "../constants";
 
 const LOG_LEVELS = {
 	DEBUG: 0,

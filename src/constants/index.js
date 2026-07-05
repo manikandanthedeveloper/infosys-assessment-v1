@@ -1,20 +1,5 @@
-const MONTHS = ["2026-06", "2026-07", "2026-08"];
-const PRODUCTS = [
-	"Laptop",
-	"Mobile",
-	"Keyboard",
-	"Mouse",
-	"Monitor",
-	"Headphones",
-	"Tablet",
-	"Printer",
-];
+const LOG_LEVEL = "INFO";
+const ENABLE_LOG = process.env.NODE_ENV !== "production";
+const MONTHS_TO_INCLUDE = 3;
 
-const WIDGETS_TITLES = {
-	customers: "Customers",
-	transactions: "Transactions",
-	rewardsAwarded: "Rewards Awarded",
-	months: "Months",
-};
-
-export { MONTHS, PRODUCTS, WIDGETS_TITLES };
+export { LOG_LEVEL, ENABLE_LOG, MONTHS_TO_INCLUDE };
