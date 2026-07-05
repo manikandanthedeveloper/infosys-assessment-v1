@@ -1,7 +1,6 @@
 import rewardCalculator from "./rewardCalculator";
 import dateFormatter from "./dateFormatter";
 import { sortByDate, sortByMonthYear, sortByName } from "./sortData";
-import logger from "./logger";
 
 function rewardAggregator(transactions) {
 	const result = transactions.reduce(
