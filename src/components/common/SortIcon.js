@@ -12,8 +12,8 @@ function SortIcon({ sortConfig, orderBy, fieldName }) {
 					sortConfig.key !== orderBy
 						? iconSort
 						: sortConfig.direction === "asc"
-							? iconSortDown
-							: iconSortUp
+							? iconSortUp
+							: iconSortDown
 				}
 				alt="Sort"
 				height={20}
