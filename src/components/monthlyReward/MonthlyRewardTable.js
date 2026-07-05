@@ -5,8 +5,8 @@ import Table from "../common/Table";
 import useSort from "../../hooks/useSort";
 import SortIcon from "../common/SortIcon";
 
-function MonthlyRewardTable({ monthlyReward }) {
-	const { sortedData, handleSort, sortConfig } = useSort(monthlyReward, "");
+function MonthlyRewardTable({ monthlyRewards }) {
+	const { sortedData, handleSort, sortConfig } = useSort(monthlyRewards, "");
 
 	return (
 		<Table title="Monthly Rewards">
@@ -82,7 +82,7 @@ function MonthlyRewardTable({ monthlyReward }) {
 }
 
 MonthlyRewardTable.propTypes = {
-	monthlyReward: PropTypes.arrayOf(
+	monthlyRewards: PropTypes.arrayOf(
 		PropTypes.exact({
 			id: PropTypes.string.isRequired,
 			customerId: PropTypes.string.isRequired,
@@ -92,7 +92,7 @@ MonthlyRewardTable.propTypes = {
 			monthNumber: PropTypes.number,
 			year: PropTypes.number.isRequired,
 			rewardPoints: PropTypes.number.isRequired,
-		}).isRequired
+		}).isRequired,
 	).isRequired,
 };
 
