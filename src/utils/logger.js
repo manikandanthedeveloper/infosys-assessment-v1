@@ -1,46 +1,38 @@
+const LOG_LEVEL = "INFO";
+const ENABLE_LOG = process.env.NODE_ENV !== "production";
+
 const LOG_LEVELS = {
 	DEBUG: 0,
-	LOG: 1,
+	INFO: 1,
 	WARN: 2,
 	ERROR: 3,
 	OFF: 4,
 };
 
-const currentLogLevel =
-	LOG_LEVELS[import.meta.env.VITE_LOG_LEVEL] ||
-	(import.meta.env.DEV ? LOG_LEVELS.LOG : LOG_LEVELS.WARN);
+const currentLogLevel = LOG_LEVELS[LOG_LEVEL.toUpperCase()] ?? LOG_LEVELS.INFO;
 
 const logger = {
-	log: (message, data) => {
-		if (currentLogLevel <= LOG_LEVELS.LOG) {
-			console.log(
-				`[LOG] ${new Date().toISOString()} - ${message}`,
-				data || "",
-			);
+	debug: (...args) => {
+		if (ENABLE_LOG && currentLogLevel <= LOG_LEVELS.DEBUG) {
+			console.debug("[DEBUG]", ...args);
 		}
 	},
-	warn: (message, data) => {
-		if (currentLogLevel <= LOG_LEVELS.WARN) {
-			console.warn(
-				`[WARN] ${new Date().toISOString()} - ${message}`,
-				data || "",
-			);
+
+	info: (...args) => {
+		if (ENABLE_LOG && currentLogLevel <= LOG_LEVELS.INFO) {
+			console.info("[INFO]", ...args);
 		}
 	},
-	error: (message, data) => {
-		if (currentLogLevel <= LOG_LEVELS.ERROR) {
-			console.error(
-				`[ERROR] ${new Date().toISOString()} - ${message}`,
-				data || "",
-			);
+
+	warn: (...args) => {
+		if (ENABLE_LOG && currentLogLevel <= LOG_LEVELS.WARN) {
+			console.warn("[WARN]", ...args);
 		}
 	},
-	debug: (message, data) => {
-		if (currentLogLevel <= LOG_LEVELS.DEBUG) {
-			console.debug(
-				`[DEBUG] ${new Date().toISOString()} - ${message}`,
-				data || "",
-			);
+
+	error: (...args) => {
+		if (ENABLE_LOG && currentLogLevel <= LOG_LEVELS.ERROR) {
+			console.error("[ERROR]", ...args);
 		}
 	},
 };
