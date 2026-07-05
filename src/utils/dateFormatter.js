@@ -14,8 +14,8 @@ function dateFormatter(dateString) {
 		day,
 		month: {
 			number: monthNumber,
-			name: date.toLocaleString("default", { month: "long" }),
-			short: date.toLocaleString("default", { month: "short" }),
+			name: date.toLocaleString("en-US", { month: "long" }),
+			short: date.toLocaleString("en-US", { month: "short" }),
 		},
 		year,
 		formattedDate,
