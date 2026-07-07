@@ -1,18 +1,18 @@
 import logger from "../utils/logger";
 
 export const fetchTransactions = async () => {
-	try {
-		const response = await fetch(
-			`${process.env.PUBLIC_URL}/data/transactions.json`,
-		);
+  try {
+    const response = await fetch(
+      `${process.env.PUBLIC_URL}/data/transactions.json`,
+    );
 
-		if (!response.ok) {
-			throw new Error("Unable to fetch transactions");
-		}
+    if (!response.ok) {
+      throw new Error("Unable to fetch transactions");
+    }
 
-		return response.json();
-	} catch (error) {
-		logger.error("Failed to fetch transactions", error.message);
-		throw error;
-	}
+    return response.json();
+  } catch (error) {
+    logger.error("Failed to fetch transactions", error.message);
+    throw error;
+  }
 };

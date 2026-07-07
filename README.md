@@ -23,21 +23,21 @@ A React.js application that calculates and displays customer reward points based
 
 Reward points are calculated using the following rules:
 
-| Purchase Amount | Reward Points |
-|-----------------|--------------:|
-| $0 - $50 | 0 |
-| $50 - $100 | 1 point for every dollar over $50 |
-| Above $100 | 2 points for every dollar over $100 + 50 points |
+| Purchase Amount |                                   Reward Points |
+| --------------- | ----------------------------------------------: |
+| $0 - $50        |                                               0 |
+| $50 - $100      |               1 point for every dollar over $50 |
+| Above $100      | 2 points for every dollar over $100 + 50 points |
 
 Example:
 
 | Purchase | Reward |
-|----------|-------:|
-| $40 | 0 |
-| $75 | 25 |
-| $100 | 50 |
-| $120 | 90 |
-| $200 | 250 |
+| -------- | -----: |
+| $40      |      0 |
+| $75      |     25 |
+| $100     |     50 |
+| $120     |     90 |
+| $200     |    250 |
 
 Decimal values are rounded down before calculating reward points.
 
@@ -257,26 +257,24 @@ npm run preview
 
 <img width="1247" height="486" alt="Monthly Reward" src="https://github.com/user-attachments/assets/f6cf35f5-fc03-455c-a671-91bb324cc83e" />
 
-
 ### Total Rewards
 
 <img width="1256" height="275" alt="Total Rewards" src="https://github.com/user-attachments/assets/9922599d-4e7d-4123-b6e7-00f1df93c7d3" />
 
-
 ### Transactions
+
 <img width="463" height="609" alt="Transactions" src="https://github.com/user-attachments/assets/6f6325bc-ceb9-496d-a8d8-894a1f9f342f" />
 
 ### Loading State
 
 <img width="1288" height="675" alt="Loading" src="https://github.com/user-attachments/assets/507f8ce1-1e35-4549-8b1a-e25a94100893" />
 
-
 ### Empty State
 
 <img width="1254" height="612" alt="Empty state" src="https://github.com/user-attachments/assets/5880cdd2-2cf9-4e37-a3c8-db5761f1cd37" />
 
-
 ### Error State
+
 <img width="1320" height="417" alt="Error" src="https://github.com/user-attachments/assets/a776f948-b0f7-4ea8-8ab8-0a3c6e6013ea" />
 
 ---
