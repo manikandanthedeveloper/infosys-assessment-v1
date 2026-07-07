@@ -29,6 +29,7 @@ TransactionTableRow.propTypes = {
 		amount: PropTypes.number.isRequired,
 		product: PropTypes.string.isRequired,
 		purchaseDate: PropTypes.string.isRequired,
+		yyyyMm: PropTypes.string.isRequired,
 		rewardPoints: PropTypes.number.isRequired,
 	}).isRequired,
 };

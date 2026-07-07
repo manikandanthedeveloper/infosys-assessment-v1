@@ -2,13 +2,14 @@ import PropTypes from "prop-types";
 import useSort from "../../hooks/useSort";
 import SortIcon from "../common/SortIcon";
 import TransactionTableRow from "./TransactionTableRow";
+import logger from "../../utils/logger";
 
 function TransactionTable({ rewardTransactions }) {
 	const { sortedData, handleSort, sortConfig } = useSort(
 		rewardTransactions,
 		"",
 	);
-
+	logger.info("Sorted Data:", sortedData);
 	return (
 		<div className="bg-white rounded-none border border-gray-200">
 			<div className="border-b border-b-gray-200 p-5">
@@ -100,6 +101,8 @@ TransactionTable.propTypes = {
 			firstName: PropTypes.string.isRequired,
 			lastName: PropTypes.string.isRequired,
 			purchaseDate: PropTypes.string.isRequired,
+			yyyyMm: PropTypes.string.isRequired,
+			product: PropTypes.string.isRequired,
 			amount: PropTypes.number.isRequired,
 			rewardPoints: PropTypes.number.isRequired,
 		}),

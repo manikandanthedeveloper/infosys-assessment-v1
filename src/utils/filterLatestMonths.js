@@ -1,23 +1,22 @@
 import { MONTHS_TO_INCLUDE } from "../constants";
 import dateFormatter from "./dateFormatter";
 function filterLatestMonths(transactions) {
+	const transactionsWithMonth = transactions.map((transaction) => ({
+		...transaction,
+		yyyyMm: dateFormatter(transaction.purchaseDate).yyyyMm,
+	}));
+
 	const latestMonths = [
 		...new Set(
-			transactions
-				.map((transaction) => {
-					const { yyyyMm } = dateFormatter(transaction.purchaseDate);
-
-					return yyyyMm;
-				})
+			transactionsWithMonth
+				.map((transaction) => transaction.yyyyMm)
 				.sort(),
 		),
-	].slice(MONTHS_TO_INCLUDE * -1);
+	].slice(-MONTHS_TO_INCLUDE);
 
-	return transactions.filter((transaction) => {
-		const { yyyyMm } = dateFormatter(transaction.purchaseDate);
-
-		return latestMonths.includes(yyyyMm);
-	});
+	return transactionsWithMonth.filter((transaction) =>
+		latestMonths.includes(transaction.yyyyMm),
+	);
 }
 
 export default filterLatestMonths;
