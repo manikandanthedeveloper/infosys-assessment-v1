@@ -53,7 +53,7 @@ Examples:
 ## Tech Stack
 
 - React 18
-- Vite
+- Create React App (CRA)
 - JavaScript (ES6)
 - Tailwind CSS
 - Faker.js
