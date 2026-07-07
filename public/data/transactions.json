@@ -277,5 +277,59 @@
         "purchaseDate": "2026-09-09",
         "product": "Printer",
         "amount": 150.85
-    }
+    },
+    {
+        "id": "TXN1029",
+        "customerId": "CUS1003",
+        "firstName": "David",
+        "lastName": "Brown",
+        "purchaseDate": "2026-08-18",
+        "product": "Laptop",
+        "amount": 189.45
+    },
+    {
+        "id": "TXN1030",
+        "customerId": "CUS1003",
+        "firstName": "David",
+        "lastName": "Brown",
+        "purchaseDate": "2026-09-03",
+        "product": "Mouse",
+        "amount": 78.90
+    },
+    {
+        "id": "TXN1031",
+        "customerId": "CUS1004",
+        "firstName": "Sophia",
+        "lastName": "Taylor",
+        "purchaseDate": "2026-08-22",
+        "product": "Tablet",
+        "amount": 132.75
+    },
+    {
+        "id": "TXN1032",
+        "customerId": "CUS1004",
+        "firstName": "Sophia",
+        "lastName": "Taylor",
+        "purchaseDate": "2026-09-10",
+        "product": "Headphones",
+        "amount": 59.80
+    },
+    {
+        "id": "TXN1033",
+        "customerId": "CUS1005",
+        "firstName": "Michael",
+        "lastName": "Johnson",
+        "purchaseDate": "2026-09-14",
+        "product": "Keyboard",
+        "amount": 142.35
+    },
+    {
+        "id": "TXN1034",
+        "customerId": "CUS1005",
+        "firstName": "Michael",
+        "lastName": "Johnson",
+        "purchaseDate": "2026-09-20",
+        "product": "Monitor",
+        "amount": 216.90
+}
 ]
