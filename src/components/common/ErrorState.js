@@ -26,7 +26,7 @@ function ErrorState({
 	);
 }
 
-Error.propTypes = {
+ErrorState.propTypes = {
 	title: PropTypes.string,
 	description: PropTypes.string,
 	onRetry: PropTypes.func,
