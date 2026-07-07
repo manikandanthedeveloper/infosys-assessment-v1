@@ -25,22 +25,12 @@ function MonthlyRewardTable({ monthlyRewards }) {
 						</th>
 						<th
 							className="px-6 py-3 text-left cursor-pointer"
-							onClick={() => handleSort("firstName")}
+							onClick={() => handleSort("customerName")}
 						>
 							<SortIcon
 								sortConfig={sortConfig}
-								orderBy="firstName"
-								fieldName="First Name"
-							/>
-						</th>
-						<th
-							className="px-6 py-3 text-left cursor-pointer"
-							onClick={() => handleSort("lastName")}
-						>
-							<SortIcon
-								sortConfig={sortConfig}
-								orderBy="lastName"
-								fieldName="Last Name"
+								orderBy="customerName"
+								fieldName="Customer Name"
 							/>
 						</th>
 						<th
