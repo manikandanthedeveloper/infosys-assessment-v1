@@ -64,9 +64,11 @@ Examples:
 ## Project Structure
 
 ```
+├── public
+│   ├── assets
+│   ├── data
+|
 src
-│
-├── assets
 │
 ├── components
 │   ├── common
@@ -76,8 +78,6 @@ src
 │   ├── widgets
 │
 ├── constants
-│
-├── data
 │
 ├── hooks
 │   ├── useSort.js
@@ -92,7 +92,7 @@ src
 │
 ├── tests
 │
-└── App.jsx
+└── App.js
 ```
 
 ---
