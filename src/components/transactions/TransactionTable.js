@@ -9,7 +9,7 @@ function TransactionTable({ rewardTransactions }) {
     rewardTransactions,
     "",
   );
-  logger.info("Sorted Data:", sortedData);
+  logger.info("Sorted Data on transaction table:", sortedData);
   return (
     <div className="bg-white rounded-none border border-gray-200">
       <div className="border-b border-b-gray-200 p-5">
@@ -97,6 +97,7 @@ TransactionTable.propTypes = {
   rewardTransactions: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      customerId: PropTypes.string.isRequired,
       firstName: PropTypes.string.isRequired,
       lastName: PropTypes.string.isRequired,
       purchaseDate: PropTypes.string.isRequired,
