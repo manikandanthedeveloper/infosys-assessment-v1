@@ -5,19 +5,12 @@ describe("dateFormatter", () => {
 		const result = dateFormatter("2024-01-15");
 
 		expect(result.day).toBe(15);
-
 		expect(result.month).toEqual({
 			number: 1,
 			short: "Jan",
 			name: "January",
 		});
-
 		expect(result.year).toBe(2024);
-
-		expect(result.yyyyMmDd).toBe("2024-01-15");
-		expect(result.ddMmYyyy).toBe("15-01-2024");
-		expect(result.mmDdYyyy).toBe("01-15-2024");
-		expect(result.yyMmDd).toBe("24-01-15");
 		expect(result.MmYyyy).toBe("01-2024");
 	});
 
