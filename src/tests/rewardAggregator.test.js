@@ -2,8 +2,8 @@ import rewardAggregator from "../utils/rewardAggregator";
 
 const transactions = [
 	{
-		id: 1,
-		customerId: 1,
+		id: "TXN1001",
+		customerId: "CUS1001",
 		firstName: "John",
 		lastName: "Doe",
 		purchaseDate: "2024-01-15",
@@ -11,8 +11,8 @@ const transactions = [
 		amount: 120,
 	},
 	{
-		id: 2,
-		customerId: 1,
+		id: "TXN1002",
+		customerId: "CUS1001",
 		firstName: "John",
 		lastName: "Doe",
 		purchaseDate: "2024-01-20",
@@ -20,8 +20,8 @@ const transactions = [
 		amount: 80,
 	},
 	{
-		id: 3,
-		customerId: 2,
+		id: "TXN1003",
+		customerId: "CUS1002",
 		firstName: "Emma",
 		lastName: "Smith",
 		purchaseDate: "2024-02-10",
@@ -44,14 +44,14 @@ describe("rewardAggregator", () => {
 		const result = rewardAggregator(transactions);
 
 		const john = result.totalRewards.find(
-			(reward) => reward.customerId === 1,
+			(reward) => reward.customerId === "CUS1001",
 		);
 
 		expect(john).toBeDefined();
 		expect(john.rewardPoints).toBe(120);
 
 		const emma = result.totalRewards.find(
-			(reward) => reward.customerId === 2,
+			(reward) => reward.customerId === "CUS1002",
 		);
 
 		expect(emma).toBeDefined();
@@ -70,24 +70,24 @@ describe("rewardAggregator", () => {
 	test("sorts monthly rewards by year then month", () => {
 		const data = [
 			{
-				id: 1,
-				customerId: 1,
+				id: "TXN1001",
+				customerId: "CUS1001",
 				firstName: "John",
 				lastName: "Doe",
 				purchaseDate: "2024-02-15",
 				amount: 120,
 			},
 			{
-				id: 2,
-				customerId: 1,
+				id: "TXN1002",
+				customerId: "CUS1001",
 				firstName: "John",
 				lastName: "Doe",
 				purchaseDate: "2023-12-15",
 				amount: 120,
 			},
 			{
-				id: 3,
-				customerId: 1,
+				id: "TXN1003",
+				customerId: "CUS1001",
 				firstName: "John",
 				lastName: "Doe",
 				purchaseDate: "2024-01-15",
@@ -110,8 +110,8 @@ describe("rewardAggregator", () => {
 	test("handles decimal amounts correctly", () => {
 		const data = [
 			{
-				id: 1,
-				customerId: 1,
+				id: "TXN1001",
+				customerId: "CUS1001",
 				firstName: "John",
 				lastName: "Doe",
 				purchaseDate: "2024-01-15",
