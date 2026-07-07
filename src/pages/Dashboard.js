@@ -26,12 +26,6 @@ function Dashboard() {
   );
   const widgetsState = stats.transactions ? [stats] : [];
 
-  logger.info("Dashboard data:", {
-    stats,
-    monthlyRewards,
-    totalRewards,
-    rewardTransactions,
-  });
   if (error) {
     return (
       <ErrorState
