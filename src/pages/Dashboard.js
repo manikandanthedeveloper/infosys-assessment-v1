@@ -12,7 +12,6 @@ import rewardAggregator from "../utils/rewardAggregator";
 import DataSection from "../components/common/DataSection";
 import filterLatestMonths from "../utils/filterLatestMonths";
 import HeaderSkeleton from "../components/common/HeaderSkeleton";
-import logger from "../utils/logger";
 
 function Dashboard() {
   const { transactions, loading, error, refetch } = useTransactions();
